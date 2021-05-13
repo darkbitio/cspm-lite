@@ -1,0 +1,94 @@
+version: "3.5"
+
+services:
+  victoria:
+    image: victoriametrics/victoria-metrics:v1.58.0
+    container_name: victoria
+    command:
+      - --promscrape.config=/victoria-metrics-conf/vic-prometheus.yml
+    volumes:
+      - ./vic-data/:/victoria-metrics-data
+      - ./vic-conf/:/victoria-metrics-conf
+    restart: unless-stopped
+    expose:
+      - 9090
+    ports:
+      - '9090:8428'
+    networks:
+      - cspm
+    depends_on:
+    - redis
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: unless-stopped
+    expose:
+      - 3000
+    ports:
+      - '3000:3000'
+    networks:
+      - cspm
+    volumes:
+      - ./grafana-data/:/var/lib/grafana
+      - ./grafana-conf/:/etc/grafana
+    environment:
+      - "GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource,grafana-piechart-panel"
+    depends_on:
+      - victoria
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    ports:
+      - '9091:8080'
+    volumes:
+      - /:/rootfs:ro
+      - /var/run/docker.sock:/var/run/docker.sock:rw
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    restart: unless-stopped
+    networks:
+      - cspm
+
+  redis:
+    image: gcr.io/opencspm/redisgraph:edge-0.0.1
+    container_name: redis
+    hostname: redisgraph
+    ports:
+      - '6379:6379'
+    restart: unless-stopped
+    depends_on:
+      - cadvisor
+    networks:
+      - cspm
+
+  redis_exporter:
+    image: oliver006/redis_exporter
+    command: -redis.addr redis://redis:6379
+    container_name: redis_exporter
+    hostname: redisgraph
+    ports:
+      - '9121:9121'
+    restart: unless-stopped
+    depends_on:
+      - redis
+    networks:
+      - cspm
+
+  redis_ui:
+    image: docker.io/redislabs/redisinsight:latest
+    container_name: redis_ui
+    hostname: redis_ui
+    ports:
+      - '8001:8001'
+    restart: unless-stopped
+    depends_on:
+      - redis
+    networks:
+      - cspm
+
+networks:
+  cspm:
+    driver: bridge
