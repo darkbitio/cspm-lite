@@ -21,9 +21,6 @@ class Analyzer
      db_config = { url: 'redis://localhost:6379' }
      @db ||= RedisGraph.new('opencspm', db_config)
      list_to_load = get_list_to_load
-     #list_to_load = [
-     #  "2021-05-12"
-     #]
      load_findings(list_to_load)
   end
 
