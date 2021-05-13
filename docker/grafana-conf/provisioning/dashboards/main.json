@@ -111,7 +111,7 @@
         "y": 1
       },
       "id": 28,
-      "interval": null,
+      "interval": "1d",
       "links": [],
       "options": {
         "displayLabels": [],
@@ -247,7 +247,7 @@
         "y": 1
       },
       "id": 31,
-      "interval": null,
+      "interval": "1d",
       "links": [],
       "options": {
         "displayLabels": [],
@@ -383,7 +383,7 @@
         "y": 1
       },
       "id": 32,
-      "interval": null,
+      "interval": "1d",
       "links": [],
       "options": {
         "displayLabels": [],
@@ -473,6 +473,7 @@
       },
       "hiddenSeries": false,
       "id": 22,
+      "interval": "1d",
       "legend": {
         "avg": false,
         "current": false,
@@ -518,11 +519,12 @@
       "steppedLine": false,
       "targets": [
         {
-          "exemplar": true,
+          "exemplar": false,
           "expr": "sum(count (opencspm_resource_export{severity=~\"7|8|9|10\",status=\"passed\"}) by (control_id))",
           "format": "time_series",
           "instant": false,
           "interval": "",
+          "intervalFactor": 1,
           "legendFormat": "High Risk Passing Resources",
           "queryType": "randomWalk",
           "refId": "A"
@@ -607,6 +609,7 @@
       },
       "hiddenSeries": false,
       "id": 23,
+      "interval": "1d",
       "legend": {
         "avg": false,
         "current": false,
@@ -713,6 +716,7 @@
       },
       "hiddenSeries": false,
       "id": 24,
+      "interval": "1d",
       "legend": {
         "avg": false,
         "current": false,
@@ -817,6 +821,7 @@
       },
       "hiddenSeries": false,
       "id": 25,
+      "interval": "1d",
       "legend": {
         "avg": false,
         "current": false,
@@ -995,7 +1000,7 @@
         "y": 28
       },
       "id": 15,
-      "interval": null,
+      "interval": "1d",
       "links": [],
       "options": {
         "displayLabels": [],
@@ -1131,7 +1136,7 @@
         "y": 28
       },
       "id": 16,
-      "interval": null,
+      "interval": "1d",
       "links": [],
       "options": {
         "displayLabels": [],
@@ -1267,7 +1272,7 @@
         "y": 28
       },
       "id": 30,
-      "interval": null,
+      "interval": "1d",
       "links": [],
       "options": {
         "displayLabels": [],
@@ -1357,6 +1362,7 @@
       },
       "hiddenSeries": false,
       "id": 4,
+      "interval": "1d",
       "legend": {
         "avg": false,
         "current": false,
@@ -1491,6 +1497,7 @@
       },
       "hiddenSeries": false,
       "id": 7,
+      "interval": "1d",
       "legend": {
         "avg": false,
         "current": false,
@@ -1609,6 +1616,7 @@
       },
       "hiddenSeries": false,
       "id": 6,
+      "interval": "1d",
       "legend": {
         "avg": false,
         "current": false,
@@ -1725,6 +1733,7 @@
       },
       "hiddenSeries": false,
       "id": 8,
+      "interval": "1d",
       "legend": {
         "avg": false,
         "current": false,
@@ -1830,12 +1839,12 @@
     "list": []
   },
   "time": {
-    "from": "now-7d",
+    "from": "now-2d",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Main",
   "uid": "DvsyaNXMk",
-  "version": 2
+  "version": 1
 }

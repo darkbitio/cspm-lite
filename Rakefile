@@ -11,12 +11,13 @@ namespace :run do
   task :fetch do
     start_date = ENV.fetch('RAKE_START_DATE', '')
     bucket_name = ENV.fetch('RAKE_BUCKET_NAME', '')
+    ENV['GOOGLE_AUTH_SUPPRESS_CREDENTIALS_WARNINGS'] = "set"
     Fetcher.new(start_date, bucket_name).fetch
   end
 
   # Load/Analyze 
   desc "Load, analyze, and export results"
-  task :analyze do
+  task :load_analyze do
     Analyzer.new
   end
 
@@ -24,7 +25,8 @@ namespace :run do
   namespace :metrics do
     desc "Export metrics from findings"
     task :export do
-      MetricsExporter.new
+      # pass which platform to skip
+      MetricsExporter.new('aws')
     end
     desc "Load metrics into viz"
     task :load do
@@ -37,5 +39,5 @@ namespace :run do
 
   # All Steps
   desc "Run fetch, load, metrics"
-  task :all => ["fetch", "analyze", "metrics:export", "metrics:load"]
+  task :all => ["fetch", "load_analyze", "metrics:export", "metrics:load"]
 end

@@ -4,11 +4,11 @@ require 'pry'
 
 class MetricsExporter
 
-  def initialize
+  def initialize(skip_platform)
      puts "Metrics Export"
 
+     @skip_platform = skip_platform
      list_to_export = get_list_to_export
-     list_to_export = ["2021-05-12"]
      export_metrics(list_to_export)
   end
 
@@ -35,6 +35,8 @@ class MetricsExporter
     raise "Invalid format" if json['results'].nil?
 
     json['results'].each do |result|
+      next if result['platform'].downcase == @skip_platform.downcase
+
       control = result['control'].downcase ||= 'empty-control'
       platform = result['platform'].downcase ||= 'empty-platform'
       category = result['category'].downcase ||= 'empty-category'

@@ -86,12 +86,11 @@ class Analyzer
         #lines.each do |line|
           asset_json = FastJsonparser.parse(line, symbolize_keys: false)
           AssetRouter.new(asset_json, import_id, @db)
-          line_count += 1
         end
       end
+      puts "Done loading #{file_name}. (#{file.lines.length} lines)"
     end
 
-    puts "Done loading #{file_name}. (#{line_count} lines)"
   end
 
   def get_load_file_path(load_date)
