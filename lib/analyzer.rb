@@ -88,7 +88,8 @@ class Analyzer
           AssetRouter.new(asset_json, import_id, @db)
         end
       end
-      puts "Done loading #{file_name}. (#{file.lines.length} lines)"
+      file.rewind
+      puts "Done loading #{file_name}. (#{file.readlines.size} lines)"
     end
 
   end
