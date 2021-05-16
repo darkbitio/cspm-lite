@@ -6,6 +6,7 @@ services:
     container_name: victoria
     command:
       - --promscrape.config=/victoria-metrics-conf/vic-prometheus.yml
+      - --retentionPeriod=120d
     volumes:
       - ./vic-data/:/victoria-metrics-data
       - ./vic-conf/:/victoria-metrics-conf
