@@ -18,7 +18,7 @@ class Analyzer
   def initialize
      puts "Loader/Analyzer"
 
-     db_config = { url: 'redis://localhost:6379' }
+     db_config = { url: 'redis://redis:6379' }
      @db ||= RedisGraph.new('opencspm', db_config)
      list_to_load = get_list_to_load
      load_findings(list_to_load)

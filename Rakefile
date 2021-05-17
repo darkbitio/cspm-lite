@@ -10,9 +10,10 @@ namespace :run do
   desc "Fetch combined files from the bucket"
   task :fetch do
     start_date = ENV.fetch('RAKE_START_DATE', '')
+    project_id = ENV.fetch('RAKE_PROJECT_ID', '')
     bucket_name = ENV.fetch('RAKE_BUCKET_NAME', '')
-    ENV['GOOGLE_AUTH_SUPPRESS_CREDENTIALS_WARNINGS'] = "set"
-    Fetcher.new(start_date, bucket_name).fetch
+    ENV['GOOGLE_AUTH_SUPPRESS_CREDENTIALS_WARNINGS'] = "true"
+    Fetcher.new(start_date, project_id, bucket_name).fetch
   end
 
   # Load/Analyze 

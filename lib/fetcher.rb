@@ -5,13 +5,14 @@ require 'google/cloud/storage'
 require 'pry'
 
 class Fetcher
-  def initialize(start_date, bucket_name)
+  def initialize(start_date, project_id, bucket_name)
     # If start_date isn't passed in via "YYYY-MM-DD", use "yesterday"
     @start_date = start_date.empty? ? Time.now.utc.to_date.prev_day : Date.parse(start_date)
     # We need a bucket passed
+    raise "project_id must be specified" if project_id.empty?
     raise "bucket_name must be specified" if bucket_name.empty?
     # Get the bucket connection object
-    storage = Google::Cloud::Storage.new
+    storage = Google::Cloud::Storage.new(project_id: project_id)
     @bucket = storage.bucket(bucket_name)
   end
 
