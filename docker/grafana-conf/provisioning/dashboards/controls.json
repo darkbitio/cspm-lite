@@ -15,8 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 3,
-  "iteration": 1621284688903,
+  "iteration": 1621285247294,
   "links": [],
   "panels": [
     {
@@ -32,8 +31,8 @@
       "fill": 2,
       "fillGradient": 0,
       "gridPos": {
-        "h": 14,
-        "w": 12,
+        "h": 11,
+        "w": 24,
         "x": 0,
         "y": 0
       },
@@ -174,7 +173,19 @@
             "properties": [
               {
                 "id": "custom.width",
-                "value": 862
+                "value": 1277
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "full_title"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 579
               }
             ]
           }
@@ -184,7 +195,7 @@
         "h": 25,
         "w": 24,
         "x": 0,
-        "y": 14
+        "y": 11
       },
       "id": 3,
       "options": {
@@ -250,7 +261,8 @@
       {
         "allValue": ".*",
         "current": {
-          "selected": false,
+          "selected": true,
+          "tags": [],
           "text": [
             "All"
           ],
@@ -286,7 +298,6 @@
         "allValue": ".*",
         "current": {
           "selected": true,
-          "tags": [],
           "text": [
             "All"
           ],
@@ -321,7 +332,7 @@
       {
         "allValue": ".*",
         "current": {
-          "selected": false,
+          "selected": true,
           "text": [
             "All"
           ],
@@ -356,7 +367,8 @@
       {
         "allValue": ".*",
         "current": {
-          "selected": false,
+          "selected": true,
+          "tags": [],
           "text": [
             "All"
           ],
@@ -391,7 +403,8 @@
       {
         "allValue": ".*",
         "current": {
-          "selected": false,
+          "selected": true,
+          "tags": [],
           "text": [
             "All"
           ],
@@ -426,7 +439,8 @@
       {
         "allValue": ".*",
         "current": {
-          "selected": false,
+          "selected": true,
+          "tags": [],
           "text": [
             "All"
           ],
@@ -497,14 +511,14 @@
     ]
   },
   "time": {
-    "from": "now-30d",
-    "to": "now-12h"
+    "from": "now-60d",
+    "to": "now-86399s"
   },
   "timepicker": {
-    "nowDelay": "12h"
+    "nowDelay": "86399s"
   },
   "timezone": "",
   "title": "Controls",
   "uid": "5ALofg3Gz",
-  "version": 24
+  "version": 25
 }

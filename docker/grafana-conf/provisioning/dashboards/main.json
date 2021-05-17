@@ -140,7 +140,7 @@
           "expr": "sum(count (opencspm_resource_export{severity=~\"7|8|9|10\",status=\"passed\",platform=\"gcp\"}) by (control_id))",
           "format": "time_series",
           "instant": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "High Passing Resources",
           "queryType": "randomWalk",
           "refId": "A"
@@ -149,7 +149,7 @@
           "exemplar": true,
           "expr": "sum(count (opencspm_resource_export{severity=~\"4|5|6\",status=\"passed\",platform=\"gcp\"}) by (control_id))",
           "hide": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "Medium Passing Resources",
           "refId": "B"
         },
@@ -157,7 +157,7 @@
           "exemplar": true,
           "expr": "sum(count (opencspm_resource_export{severity=~\"1|2|3\",status=\"passed\",platform=\"gcp\"}) by (control_id))",
           "hide": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "Low Passing Resources",
           "refId": "C"
         }
@@ -276,7 +276,7 @@
           "expr": "sum(count (opencspm_resource_export{severity=~\"7|8|9|10\",status=\"passed\",platform=\"kubernetes\"}) by (control_id))",
           "format": "time_series",
           "instant": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "High Passing Resources",
           "queryType": "randomWalk",
           "refId": "A"
@@ -285,7 +285,7 @@
           "exemplar": true,
           "expr": "sum(count (opencspm_resource_export{severity=~\"4|5|6\",status=\"passed\",platform=\"kubernetes\"}) by (control_id))",
           "hide": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "Medium Passing Resources",
           "refId": "B"
         },
@@ -293,7 +293,7 @@
           "exemplar": true,
           "expr": "sum(count (opencspm_resource_export{severity=~\"1|2|3\",status=\"passed\",platform=\"kubernetes\"}) by (control_id))",
           "hide": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "Low Passing Resources",
           "refId": "C"
         }
@@ -412,7 +412,7 @@
           "expr": "sum(count (opencspm_resource_export{severity=~\"7|8|9|10\",status=\"passed\",platform=\"aws\"}) by (control_id))",
           "format": "time_series",
           "instant": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "High Passing Resources",
           "queryType": "randomWalk",
           "refId": "A"
@@ -421,7 +421,7 @@
           "exemplar": true,
           "expr": "sum(count (opencspm_resource_export{severity=~\"4|5|6\",status=\"passed\",platform=\"aws\"}) by (control_id))",
           "hide": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "Medium Passing Resources",
           "refId": "B"
         },
@@ -429,7 +429,7 @@
           "exemplar": true,
           "expr": "sum(count (opencspm_resource_export{severity=~\"1|2|3\",status=\"passed\",platform=\"aws\"}) by (control_id))",
           "hide": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "Low Passing Resources",
           "refId": "C"
         }
@@ -523,7 +523,7 @@
           "expr": "sum(count (opencspm_resource_export{severity=~\"7|8|9|10\",status=\"passed\"}) by (control_id))",
           "format": "time_series",
           "instant": false,
-          "interval": "",
+          "interval": "1d",
           "intervalFactor": 1,
           "legendFormat": "High Risk Passing Resources",
           "queryType": "randomWalk",
@@ -533,7 +533,7 @@
           "exemplar": true,
           "expr": "sum(count (opencspm_resource_export{severity=~\"4|5|6\",status=\"failed\"}) by (control_id))",
           "hide": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "Medium Risk Passing Resources",
           "refId": "B"
         },
@@ -541,7 +541,7 @@
           "exemplar": true,
           "expr": "sum(count (opencspm_resource_export{severity=~\"1|2|3\",status=\"passed\"}) by (control_id))",
           "hide": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "Low Risk Passing Resources",
           "refId": "C"
         }
@@ -647,7 +647,7 @@
           "expr": "sum(count (opencspm_resource_export{severity=~\"7|8|9|10\",status=\"passed\"}) by (control_id))",
           "format": "time_series",
           "instant": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "High Risk Passing Resources",
           "queryType": "randomWalk",
           "refId": "A"
@@ -753,7 +753,7 @@
           "exemplar": true,
           "expr": "sum(count (opencspm_resource_export{severity=~\"4|5|6\",status=\"passed\"}) by (control_id))",
           "hide": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "Medium Risk Passing Resources",
           "refId": "B"
         }
@@ -858,7 +858,7 @@
           "exemplar": true,
           "expr": "sum(count (opencspm_resource_export{severity=~\"1|2|3\",status=\"passed\"}) by (control_id))",
           "hide": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "Low Risk Passing Resources",
           "refId": "C"
         }
@@ -1029,7 +1029,7 @@
           "expr": "sum(count (opencspm_resource_export{severity=~\"7|8|9|10\",status=\"failed\",platform=\"gcp\"}) by (control_id))",
           "format": "time_series",
           "instant": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "High Failing Resources",
           "queryType": "randomWalk",
           "refId": "A"
@@ -1038,7 +1038,7 @@
           "exemplar": true,
           "expr": "sum(count (opencspm_resource_export{severity=~\"4|5|6\",status=\"failed\",platform=\"gcp\"}) by (control_id))",
           "hide": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "Medium Failing Resources",
           "refId": "B"
         },
@@ -1046,7 +1046,7 @@
           "exemplar": true,
           "expr": "sum(count (opencspm_resource_export{severity=~\"1|2|3\",status=\"failed\",platform=\"gcp\"}) by (control_id))",
           "hide": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "Low Failing Resources",
           "refId": "C"
         }
@@ -1165,7 +1165,7 @@
           "expr": "sum(count (opencspm_resource_export{severity=~\"7|8|9|10\",status=\"failed\",platform=\"kubernetes\"}) by (control_id))",
           "format": "time_series",
           "instant": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "High Failing Resources",
           "queryType": "randomWalk",
           "refId": "A"
@@ -1174,7 +1174,7 @@
           "exemplar": true,
           "expr": "sum(count (opencspm_resource_export{severity=~\"4|5|6\",status=\"failed\",platform=\"kubernetes\"}) by (control_id))",
           "hide": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "Medium Failing Resources",
           "refId": "B"
         },
@@ -1182,7 +1182,7 @@
           "exemplar": true,
           "expr": "sum(count (opencspm_resource_export{severity=~\"1|2|3\",status=\"failed\",platform=\"kubernetes\"}) by (control_id))",
           "hide": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "Low Failing Resources",
           "refId": "C"
         }
@@ -1301,7 +1301,7 @@
           "expr": "sum(count (opencspm_resource_export{severity=~\"7|8|9|10\",status=\"failed\",platform=\"aws\"}) by (control_id))",
           "format": "time_series",
           "instant": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "High Failing Resources",
           "queryType": "randomWalk",
           "refId": "A"
@@ -1310,7 +1310,7 @@
           "exemplar": true,
           "expr": "sum(count (opencspm_resource_export{severity=~\"4|5|6\",status=\"failed\",platform=\"aws\"}) by (control_id))",
           "hide": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "Medium Failing Resources",
           "refId": "B"
         },
@@ -1318,7 +1318,7 @@
           "exemplar": true,
           "expr": "sum(count (opencspm_resource_export{severity=~\"1|2|3\",status=\"failed\",platform=\"aws\"}) by (control_id))",
           "hide": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "Low Failing Resources",
           "refId": "C"
         }
@@ -1412,7 +1412,7 @@
           "expr": "sum(count (opencspm_resource_export{severity=~\"7|8|9|10\",status=\"failed\"}) by (control_id))",
           "format": "time_series",
           "instant": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "High Failing Resources",
           "queryType": "randomWalk",
           "refId": "A"
@@ -1421,7 +1421,7 @@
           "exemplar": true,
           "expr": "sum(count (opencspm_resource_export{severity=~\"4|5|6\",status=\"failed\"}) by (control_id))",
           "hide": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "Medium Failing Resources",
           "refId": "B"
         },
@@ -1429,7 +1429,7 @@
           "exemplar": true,
           "expr": "sum(count (opencspm_resource_export{severity=~\"1|2|3\",status=\"failed\"}) by (control_id))",
           "hide": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "Low Failing Resources",
           "refId": "C"
         }
@@ -1547,7 +1547,7 @@
           "expr": "sum(count (opencspm_resource_export{severity=~\"7|8|9|10\",status=\"failed\"}) by (control_id))",
           "format": "time_series",
           "instant": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "High Failing Resources",
           "queryType": "randomWalk",
           "refId": "A"
@@ -1665,7 +1665,7 @@
           "exemplar": true,
           "expr": "sum(count (opencspm_resource_export{severity=~\"4|5|6\",status=\"failed\"}) by (control_id))",
           "hide": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "Medium Failing Resources",
           "refId": "B"
         }
@@ -1782,7 +1782,7 @@
           "exemplar": true,
           "expr": "sum(count (opencspm_resource_export{severity=~\"1|2|3\",status=\"failed\"}) by (control_id))",
           "hide": false,
-          "interval": "",
+          "interval": "1d",
           "legendFormat": "Low Failing Resources",
           "refId": "C"
         }
@@ -1839,12 +1839,14 @@
     "list": []
   },
   "time": {
-    "from": "now-2d",
-    "to": "now"
+    "from": "now-90d",
+    "to": "now-86399s"
   },
-  "timepicker": {},
-  "timezone": "",
+  "timepicker": {
+    "nowDelay": "86399s"
+  },
+  "timezone": "utc",
   "title": "Main",
   "uid": "DvsyaNXMk",
-  "version": 1
+  "version": 2
 }
