@@ -55,7 +55,7 @@ class MetricsExporter
         elsif status == "failed"
           numstatus = 1
         end
-        metrics.concat("opencspm_resource_export{control_id=\"#{control}\",platform=\"#{platform}\",category=\"#{category}\",resource_type=\"#{resource_type}\",title=\"#{title}\",severity=\"#{severity}\",effort=\"#{effort}\",resource_name=\"#{resource_name}\",status=\"#{status}\"} #{numstatus} #{timestamp}\n")
+        metrics.concat("opencspm_resource_export{control_id=\"#{control}\",platform=\"#{platform}\",category=\"#{category}\",resource_type=\"#{resource_type}\",title=\"#{title}\",severity=\"#{severity}\",effort=\"#{effort}\",resource_name=\"#{resource_name}\",status=\"#{status}\",full_title=\"#{control} - #{title}\"} #{numstatus} #{timestamp}\n")
       end
     end
     File.open(metrics_file, 'w') { |file| file.write(metrics) }
