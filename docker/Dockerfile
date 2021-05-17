@@ -5,7 +5,7 @@ WORKDIR /app
 
 RUN apk add --no-cache git curl bash
 RUN apk add --no-cache --virtual build-dependencies build-base gcc && \
-    gem install rspec google-cloud-storage pry redisgraph parallel fast_jsonparser && \
+    gem install rspec activesupport google-cloud-storage pry redisgraph parallel fast_jsonparser && \
     apk del build-dependencies
 
 ADD lib /app/lib

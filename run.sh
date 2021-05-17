@@ -9,6 +9,7 @@ PROJECT_ID="db-tenant-32d72099"
 BUCKET_NAME="db-tenant-32d72099-us-opencspm"
 docker run --rm -it --net="docker_cspm" \
   -v "${CURRENT_DIR}/data:/app/data" \
+  -v "${CURRENT_DIR}/../opencspm-controls:/opencspm-controls" \
   -v "${HOMEDIR}/.config/gcloud:/root/.config/gcloud" \
   -e RAKE_PROJECT_ID="${PROJECT_ID}" \
   -e RAKE_BUCKET_NAME="${BUCKET_NAME}" \
