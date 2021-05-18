@@ -82,7 +82,7 @@ class Analyzer
     batch_size = 25000
     File.open(file_name) do |file|
       file.each_slice(batch_size) do |lines|
-        Parallel.each(lines, in_processes: 8) do |line|
+        Parallel.each(lines, in_processes: 16) do |line|
         #lines.each do |line|
           asset_json = FastJsonparser.parse(line, symbolize_keys: false)
           AssetRouter.new(asset_json, import_id, @db)

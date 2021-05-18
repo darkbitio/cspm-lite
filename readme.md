@@ -26,6 +26,10 @@ cd ~/cspm-lite
 
 ### Run backend services
 ```
+# If Ubuntu
+sudo aa-remove-unknown
+```
+```
 cd docker
 docker compose up -d
 ```
