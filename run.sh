@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 IMAGE_PATH="gcr.io/opencspm/cspm-lite:latest"
-CURRENT_DIR="$(PWD)"
+CURRENT_DIR="$(pwd)"
 COMMAND="${@:-rake -T}"
 HOMEDIR="${HOME}"
 START_DATE="2021-03-15"

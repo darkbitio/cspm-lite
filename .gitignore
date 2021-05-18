@@ -1,1 +1,5 @@
-data/*
+data/combined/*.json
+data/findings/*.findings
+data/metrics/*.metrics
+docker/vic-data/*
+docker/grafana-data/*
