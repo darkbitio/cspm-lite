@@ -32,6 +32,15 @@ docker compose up -d
 
 ### Run CSPM pipeline
 ```
+# If running not on GCE instance
+gcloud auth application-default login
+# Auth via browser to current user identity
+# Paste code back in
+# Select the current project with the bucket
+# Test access to see collection bucket: gs://db-tenant-NNNNNNN-us-opencspm/
+gsutil ls
+```
+```
 cd ~/cspm-lite
 # Modify run.sh env vars for project_id, bucket_name, start_date
 # Modify run.sh mounts for local gcloud creds if not on GCE instance
