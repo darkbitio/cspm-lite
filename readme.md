@@ -209,13 +209,18 @@ crontab -e
 
 Append the following line:
 ```
-6 5 * * * cd /root/cspm-lite && ./run.sh rake run:all
+6 5 * * * cd /root/cspm-lite && ./run.sh rake run:all >> /tmp/run.log 2>&1
 ```
 
 To view the results, disconnect from the SSH session and restart it with a port forward for `TCP 3000`.
 ```
 exit
 gcloud beta compute ssh --zone "us-central1-a" "db-tenant-<tenantid>-cspm-lite-vm"  --tunnel-through-iap --project "db-tenant-<tenantid>" -- -L 3000:localhost:3000
+```
+
+To view the last run:
+```
+tail /tmp/run.log
 ```
 
 Open [http://localhost:3000](http://localhost:3000) and log in with `admin/admin`.  Change the password as requested.
