@@ -24,6 +24,7 @@ services:
     image: grafana/grafana
     container_name: grafana
     restart: unless-stopped
+    user: root
     expose:
       - 3000
     ports:
